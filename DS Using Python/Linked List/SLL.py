@@ -111,6 +111,21 @@ class SLL:
                 temp = temp.next
             print(val, " not present in the list")
 
+    def reverse_print(self):
+        if self.start == None:
+            print("List is empty")
+        else:
+            temp = self.start
+            res = []
+            while temp is not None:
+                res.append(temp.item)
+                temp = temp.next
+            res = res[::-1]
+            for ele in res:
+                print(ele, " -> ", end = ' ')
+            print("null")
+
+
 if __name__ == "__main__":
 
     li = SLL()
@@ -122,6 +137,7 @@ if __name__ == "__main__":
     li.insert_after_a_value(2, 4)
     li.print_list()
     li.search(4)
+    li.reverse_print()
     li.delete_first()
     li.print_list()
     li.delete_last()
@@ -129,6 +145,7 @@ if __name__ == "__main__":
     li.print_list()
     li.delete_a_value(4)
     li.print_list()
+
 
 '''
 2  successfully inserted at first
@@ -139,6 +156,7 @@ if __name__ == "__main__":
 4  successfully inserted after 2
 3  ->  2  ->  4  ->  5  ->  20  ->  null
 4  present at  2  index
+20  ->  5  ->  4  ->  2  ->  3  ->  null
 3  deleted successfully
 2  ->  4  ->  5  ->  20  ->  null
 20  deleted successfully
@@ -146,6 +164,5 @@ if __name__ == "__main__":
 2  ->  4  ->  null
 4  deleted suxxessfully
 2  ->  null
-
 '''
 
